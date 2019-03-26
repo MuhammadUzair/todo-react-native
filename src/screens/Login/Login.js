@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
-
+import AsyncStorage from '@react-native-community/async-storage';
 import OverlayIndicator from '../../components/OverlayIndicator';
 import { globalStyles } from '../../assets/styles';
 
 export default class Login extends Component {
-  state = {
-    user: []
-  };
+  constructor(props) {
+    super(props);
+    // console.log('getUser ', props);
+    this.props.getUser();
+  }
+
+  componentDidUpdate() {
+    const {
+      user: { name },
+      navigation: { navigate }
+    } = this.props;
+    if (name) navigate('Dashboard');
+  }
 
   render() {
     return (
@@ -16,11 +26,14 @@ export default class Login extends Component {
         <TouchableOpacity
           style={[{ backgroundColor: 'white' }]}
           onPress={() => this.props.navigation.navigate('Dashboard')}
+          // onPress={() => {
+          //   AsyncStorage.setItem('user', JSON.stringify({ name: 'uzair' }));
+          // }}
         >
           <Text
             style={[
               styles.headerText,
-              globalStyles.highlightColor,
+              globalStyles.appBaseFontColor,
               { paddingTop: 10 }
             ]}
           >

@@ -6,6 +6,7 @@ import { os } from '../utils';
 const screen = Dimensions.get('window');
 
 export const greyColor = '#2c2c2c';
+export const baseGreen = '#4CDA64';
 export const baseBlue = '#4879d5';
 export const baseGrey = '#E7E7E7';
 export const darkGrey = '#7B919E';
@@ -14,268 +15,272 @@ export const onboardGrey = '#585858';
 export const seperatorColor = '#f5f5f5';
 
 export const globalStyles = StyleSheet.create({
-    mainContainer: {
-        paddingHorizontal: os() ? 10 : 15
-    },
+  mainContainer: {
+    paddingHorizontal: os() ? 10 : 15
+  },
 
-    flexContainer: {
-        flex: 1
-    },
+  flexContainer: {
+    flex: 1
+  },
 
-    flexHorizontal: {
-        flexDirection: 'row'
-    },
+  flexHorizontal: {
+    flexDirection: 'row'
+  },
 
-    flexVertical: {
-        flexDirection: 'column'
-    },
+  flexVertical: {
+    flexDirection: 'column'
+  },
 
-    flexHCenter: {
-        alignItems: 'center'
-    },
+  flexHCenter: {
+    alignItems: 'center'
+  },
 
-    flexVCenter: {
-        justifyContent: 'center'
-    },
+  flexVCenter: {
+    justifyContent: 'center'
+  },
 
-    flexVBottom: {
-        justifyContent: 'flex-end'
-    },
+  flexVBottom: {
+    justifyContent: 'flex-end'
+  },
 
-    flexVTop: {
-        justifyContent: 'flex-start'
-    },
+  flexVTop: {
+    justifyContent: 'flex-start'
+  },
 
-    flexSpaceBetween: {
-        justifyContent: 'space-between'
-    },
+  flexSpaceBetween: {
+    justifyContent: 'space-between'
+  },
 
-    fullScreen: {
-        width: 100 + '%',
-        height: 100 + '%'
-    },
+  fullScreen: {
+    width: 100 + '%',
+    height: 100 + '%'
+  },
 
-    fullWidth: {
-        width: 100 + '%'
-    },
+  fullWidth: {
+    width: 100 + '%'
+  },
 
-    fullHeight: {
-        height: 100 + '%'
-    },
+  fullHeight: {
+    height: 100 + '%'
+  },
 
-    fontFace: {
-        fontWeight: '300',
-        fontStyle: 'normal',
-        color: greyColor
-    },
+  fontFace: {
+    fontWeight: '300',
+    fontStyle: 'normal',
+    color: greyColor
+  },
 
-    headingFontFace: {
-        fontWeight: 'bold',
-        fontStyle: 'normal',
-        marginBottom: 5
-    },
+  headingFontFace: {
+    fontWeight: 'bold',
+    fontStyle: 'normal',
+    marginBottom: 5
+  },
 
-    boldFontFace: {
-        fontWeight: 'bold',
-        fontStyle: 'normal'
-    },
+  boldFontFace: {
+    fontWeight: 'bold',
+    fontStyle: 'normal'
+  },
 
-    baseFontSize: {
-        fontSize: scale(12)
-    },
+  baseFontSize: {
+    fontSize: scale(12)
+  },
 
-    subTextFontSize: {
-        fontSize: scale(10)
-    },
-    smallFontSize: {
-        fontSize: scale(8)
-    },
+  subTextFontSize: {
+    fontSize: scale(10)
+  },
+  smallFontSize: {
+    fontSize: scale(8)
+  },
 
-    highlightColor: {
-        color: '#4287e1'
-    },
+  highlightColor: {
+    color: '#4287e1'
+  },
 
-    highlightBorder: {
-        borderColor: '#88c3ff',
-        borderWidth: 0.5
-    },
+  highlightBorder: {
+    borderColor: '#88c3ff',
+    borderWidth: 0.5
+  },
 
-    whiteBackgroudColor: {
-        backgroundColor: '#FFFFFF'
-    },
+  whiteBackgroudColor: {
+    backgroundColor: '#FFFFFF'
+  },
 
-    greenBackgroudColor: {
-        backgroundColor: '#4cd964'
-    },
+  greenBackgroudColor: {
+    backgroundColor: '#4cd964'
+  },
 
-    blueBackgroudColor: {
-        backgroundColor: '#4287e1'
-    },
+  blueBackgroudColor: {
+    backgroundColor: '#4287e1'
+  },
 
-    greyBackgroudColor: {
-        backgroundColor: '#FAFAFA'
-    },
-    darkGrayBackgroudColor: {
-        backgroundColor: darkGrey
-    },
+  greyBackgroudColor: {
+    backgroundColor: '#FAFAFA'
+  },
+  darkGrayBackgroudColor: {
+    backgroundColor: darkGrey
+  },
 
-    mediumGreyBackgroudColor: {
-        backgroundColor: '#E7E7E7'
-    },
+  mediumGreyBackgroudColor: {
+    backgroundColor: '#E7E7E7'
+  },
 
-    paleRedBackgroudColor: {
-        backgroundColor: '#ff2458'
-    },
+  paleRedBackgroudColor: {
+    backgroundColor: '#ff2458'
+  },
 
-    whiteColor: {
-        color: '#FFFFFF'
-    },
+  whiteColor: {
+    color: '#FFFFFF'
+  },
 
-    blackColor: {
-        color: '#000000'
-    },
+  blackColor: {
+    color: '#000000'
+  },
 
-    greyColor: {
-        color: '#333'
-    },
-    greyLightColor: {
-        color: '#555'
-    },
+  appBaseFontColor: {
+    color: baseGreen
+  },
 
-    baseGreyColor: {
-        color: '#79909e'
-    },
+  greyColor: {
+    color: '#333'
+  },
+  greyLightColor: {
+    color: '#555'
+  },
 
-    placeHolderGreyColor: {
-        color: '#585858'
-    },
+  baseGreyColor: {
+    color: '#79909e'
+  },
 
-    headingBlackColor: {
-        color: '#4c4c4c'
-    },
+  placeHolderGreyColor: {
+    color: '#585858'
+  },
 
-    navIconGreyColor: {
-        color: '#c8d0ef'
-    },
+  headingBlackColor: {
+    color: '#4c4c4c'
+  },
 
-    baseBlueColor: {
-        color: '#4879d5'
-    },
+  navIconGreyColor: {
+    color: '#c8d0ef'
+  },
 
-    highlightBlueColor: {
-        color: '#4879d5'
-    },
+  baseBlueColor: {
+    color: '#4879d5'
+  },
 
-    highlightPinkColor: {
-        color: '#fa5aab'
-    },
-    errorColor: {
-        color: '#aa0000'
-    },
+  highlightBlueColor: {
+    color: '#4879d5'
+  },
 
-    highlightGreenColor: {
-        color: '#4cd964'
-    },
+  highlightPinkColor: {
+    color: '#fa5aab'
+  },
+  errorColor: {
+    color: '#aa0000'
+  },
 
-    paleRedColor: {
-        color: '#ff2458'
-    },
+  highlightGreenColor: {
+    color: '#4cd964'
+  },
 
-    circularCircle: {
-        borderRadius: 50,
-        borderWidth: 1,
-        borderColor: '#88c3ff',
-        padding: 5,
-        textAlign: 'center',
-        alignSelf: 'flex-end',
-        position: 'relative',
-        zIndex: 9
-    },
+  paleRedColor: {
+    color: '#ff2458'
+  },
 
-    mediumHeight: {
-        height: 50
-    },
+  circularCircle: {
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#88c3ff',
+    padding: 5,
+    textAlign: 'center',
+    alignSelf: 'flex-end',
+    position: 'relative',
+    zIndex: 9
+  },
 
-    smallHeight: {
-        height: 30
-    },
-    largeWidth: {
-        width: 70
-    },
-    mediumWidth: {
-        width: 50
-    },
+  mediumHeight: {
+    height: 50
+  },
 
-    smallWidth: {
-        width: 30
-    },
+  smallHeight: {
+    height: 30
+  },
+  largeWidth: {
+    width: 70
+  },
+  mediumWidth: {
+    width: 50
+  },
 
-    hairLineUnderBorder: {
-        borderBottomWidth: StyleSheet.hairlineWidth,
-        borderColor: '#f5f5f5'
-    },
-    keyboardAwareScrollView: {
-        height: screen.height
-    }
+  smallWidth: {
+    width: 30
+  },
+
+  hairLineUnderBorder: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#f5f5f5'
+  },
+  keyboardAwareScrollView: {
+    height: screen.height
+  }
 });
 
 export const loginStyles = StyleSheet.create({
-    container: {
-        backgroundColor: '#FFF',
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
-        width: screen.width - 25,
-        paddingHorizontal: 20,
-        paddingTop: 20
-    },
-    bottomSpacing: {
-        marginBottom: os() ? 12 : 6
-    },
+  container: {
+    backgroundColor: '#FFF',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    width: screen.width - 25,
+    paddingHorizontal: 20,
+    paddingTop: 20
+  },
+  bottomSpacing: {
+    marginBottom: os() ? 12 : 6
+  },
 
-    inputContainer: {
-        borderRadius: os() ? 50 : 30,
-        paddingVertical: os() ? 15 : 0,
-        paddingHorizontal: os() ? 10 : 0
-    },
+  inputContainer: {
+    borderRadius: os() ? 50 : 30,
+    paddingVertical: os() ? 15 : 0,
+    paddingHorizontal: os() ? 10 : 0
+  },
 
-    passwordField: {
-        width: 82 + '%',
-        paddingHorizontal: os() ? 0 : 15
-    },
+  passwordField: {
+    width: 82 + '%',
+    paddingHorizontal: os() ? 0 : 15
+  },
 
-    emailField: {
-        paddingHorizontal: os() ? 0 : 15
-    },
+  emailField: {
+    paddingHorizontal: os() ? 0 : 15
+  },
 
-    checkbox: {
-        borderWidth: 0,
-        backgroundColor: '#FFF',
-        padding: 0,
-        margin: 0
-    },
+  checkbox: {
+    borderWidth: 0,
+    backgroundColor: '#FFF',
+    padding: 0,
+    margin: 0
+  },
 
-    bigPrimaryButton: {
-        paddingVertical: os() ? 20 : 15,
-        paddingHorizontal: os() ? 25 : 20,
-        borderRadius: 50,
-        flexDirection: 'row',
-        width: os() ? 80 + '%' : 70 + '%'
-    },
+  bigPrimaryButton: {
+    paddingVertical: os() ? 20 : 15,
+    paddingHorizontal: os() ? 25 : 20,
+    borderRadius: 50,
+    flexDirection: 'row',
+    width: os() ? 80 + '%' : 70 + '%'
+  },
 
-    bigPrimaryButtonText: {
-        fontSize: 18
-    },
+  bigPrimaryButtonText: {
+    fontSize: 18
+  },
 
-    secondaryButton: {
-        borderRadius: 50,
-        paddingVertical: 10,
-        paddingHorizontal: 10,
-        marginHorizontal: 10
-    },
-    resetMsg: {
-        marginBottom: 111
-    },
-    lgBottomSpacing: {
-        marginBottom: os() ? 43 : 18
-    }
+  secondaryButton: {
+    borderRadius: 50,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    marginHorizontal: 10
+  },
+  resetMsg: {
+    marginBottom: 111
+  },
+  lgBottomSpacing: {
+    marginBottom: os() ? 43 : 18
+  }
 });

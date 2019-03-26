@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
     return (
       <>
         <TouchableOpacity style={[{ backgroundColor: 'white' }]}>
-          <Text style={[styles.headerText, globalStyles.highlightColor]}>
+          <Text style={[styles.headerText, globalStyles.appBaseFontColor]}>
             Dashboard
           </Text>
         </TouchableOpacity>

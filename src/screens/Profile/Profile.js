@@ -16,7 +16,7 @@ export default class Profile extends Component {
           <Text
             style={[
               styles.headerText,
-              globalStyles.highlightColor,
+              globalStyles.appBaseFontColor,
               { paddingTop: 10 }
             ]}
           >
@@ -33,7 +33,7 @@ export default class Profile extends Component {
           <Text
             style={[
               styles.headerText,
-              globalStyles.highlightColor,
+              globalStyles.appBaseFontColor,
               { paddingTop: 10 }
             ]}
           >
