@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
+import Header from '../../components/Header';
 import styles from './styles';
-
-import { globalStyles } from '../../assets/styles';
+import FlatButton from '../../components/FlatButton';
 
 export default class Profile extends Component {
-  state = {
-    user: []
+  onSubmit = () => {
+    this.props.resetUser();
+    this.props.navigation.dangerouslyGetParent().navigate('Login');
   };
 
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <TouchableOpacity style={[{ backgroundColor: 'white' }]}>
-          <Text
-            style={[
-              styles.headerText,
-              globalStyles.appBaseFontColor,
-              { paddingTop: 10 }
-            ]}
-          >
-            Profile
-          </Text>
-        </TouchableOpacity>
+    const {
+      user: { name }
+    } = this.props;
 
-        <TouchableOpacity
-          style={[{ backgroundColor: 'white' }]}
-          onPress={() =>
-            this.props.navigation.dangerouslyGetParent().navigate('Login')
-          }
-        >
-          <Text
-            style={[
-              styles.headerText,
-              globalStyles.appBaseFontColor,
-              { paddingTop: 10 }
-            ]}
-          >
-            Logout
-          </Text>
-        </TouchableOpacity>
+    return (
+      <View style={styles.container}>
+        <Header text={name ? 'Hello, ' + name : ''} />
+
+        <FlatButton
+          text="Logout"
+          buttonStyle={styles.logoutButton}
+          onpress={this.onSubmit}
+          backgroundColor={false}
+        />
       </View>
     );
   }

@@ -22,16 +22,27 @@ const userFailed = data => ({
 
 export const resetUser = () => ({ type: USER_RESET });
 
+const getUser = () => {
+  return AsyncStorage.getItem('user');
+};
+const storeUser = name =>
+  AsyncStorage.setItem('user', JSON.stringify({ name }));
+
 export default action$ =>
   action$.pipe(
     ofType(USER),
     switchMap(action => {
-      const req = AsyncStorage.getItem('user')
-        .then(res => JSON.parse(res))
-        .then(async res => {
-          if (res && res.name) return userSuccessful(res);
-          return userFailed(res);
-        });
+      const req =
+        action.data && action.data.isSave
+          ? storeUser(action.data.name).then(() =>
+              userSuccessful({ name: action.data.name })
+            )
+          : getUser()
+              .then(res => JSON.parse(res))
+              .then(async res => {
+                if (res && res.name) return userSuccessful(res);
+                return userFailed(res);
+              });
       return from(req).pipe(
         catchError(err => {
           return of(userFailed(err));

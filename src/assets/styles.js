@@ -7,12 +7,10 @@ const screen = Dimensions.get('window');
 
 export const greyColor = '#2c2c2c';
 export const baseGreen = '#4CDA64';
+export const baseRed = '#d63031';
 export const baseBlue = '#4879d5';
 export const baseGrey = '#E7E7E7';
 export const darkGrey = '#7B919E';
-export const baseBlack = '#000000';
-export const onboardGrey = '#585858';
-export const seperatorColor = '#f5f5f5';
 
 export const globalStyles = StyleSheet.create({
   mainContainer: {
@@ -104,5 +102,12 @@ export const globalStyles = StyleSheet.create({
 
   rowPadding: {
     paddingHorizontal: moderateScale(15)
+  },
+
+  // tab Icons
+  tabIconStyle: {
+    fontSize: scale(26),
+    color: darkGrey
   }
+  // tab Icons
 });

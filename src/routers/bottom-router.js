@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from 'react-navigation';
 import React from 'react';
 import { Image } from 'react-native';
-// import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { greyColor, globalStyles } from '../assets/styles';
 
@@ -19,16 +20,21 @@ const BottomTabNavigator = createBottomTabNavigator(
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
-        console.log('routeName ', routeName);
-        return (
-          <Image
-            style={{
-              width: 24,
-              height: 24
-            }}
-            source={{ uri: 'https://facebook.github.io/react/logo-og.png' }}
-          />
-        );
+        // console.log('routeName ', routeName, tintColor);
+        switch (routeName) {
+          case 'AddTodo':
+            return <Icon name="add" style={[globalStyles.tabIconStyle]} />;
+          case 'Profile':
+            return <Icon name="person" style={globalStyles.tabIconStyle} />;
+          case 'Dashboard':
+            return (
+              <Ionicons name="md-list-box" style={globalStyles.tabIconStyle} />
+            );
+          default:
+            return (
+              <Icon name="application" style={globalStyles.tabIconStyle} />
+            );
+        }
       },
       tabBarOnPress: () => {
         const {
@@ -49,5 +55,3 @@ const BottomTabNavigator = createBottomTabNavigator(
   }
 );
 export default BottomTabNavigator;
-
-// export default BottomRouter;

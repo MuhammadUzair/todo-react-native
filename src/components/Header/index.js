@@ -1,26 +1,21 @@
 import React from 'react';
-import { ActivityIndicator, View, StyleSheet } from 'react-native';
-import { globalStyles, baseBlue } from '../../assets/styles';
+import { Text, TouchableOpacity } from 'react-native';
+import { globalStyles } from '../../assets/styles';
 import styles from './styles';
+import LinearGradient from 'react-native-linear-gradient';
 
-export default () => {
+export default props => {
+  const { text, buttonStyle, onpress } = props;
+
   return (
-    <View
-      style={[
-        StyleSheet.absoluteFill,
-        globalStyles.flexHCenter,
-        globalStyles.flexVCenter
-      ]}
+    <LinearGradient
+      colors={['#73E186', '#4CDA64', '#73E186']}
+      style={[styles.linearGradient, buttonStyle && buttonStyle]}
     >
-      <View
-        style={[
-          globalStyles.flexHCenter,
-          globalStyles.flexVCenter,
-          styles.activityIndicatorWrap
-        ]}
-      >
-        <ActivityIndicator size="large" color={baseBlue} />
-      </View>
-    </View>
+      <Text style={[globalStyles.boldFontFace, styles.text]}>
+        {' '}
+        {text && text}
+      </Text>
+    </LinearGradient>
   );
 };

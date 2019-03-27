@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
-import { globalStyles, baseBlue } from '../../assets/styles';
+import { globalStyles, baseGreen } from '../../assets/styles';
 import styles from './styles';
 
 export default () => {
@@ -19,7 +19,7 @@ export default () => {
           styles.activityIndicatorWrap
         ]}
       >
-        <ActivityIndicator size="large" color={baseBlue} />
+        <ActivityIndicator size="large" color={baseGreen} />
       </View>
     </View>
   );

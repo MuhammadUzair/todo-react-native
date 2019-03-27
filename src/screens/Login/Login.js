@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
+import { View, Text } from 'react-native';
 import styles from './styles';
-import AsyncStorage from '@react-native-community/async-storage';
 import OverlayIndicator from '../../components/OverlayIndicator';
 import FlatButton from '../../components/FlatButton';
 import UserInput from '../../components/UserInput';
@@ -31,10 +29,13 @@ export default class Login extends Component {
   };
 
   onSubmit = () => {
-    this.props.navigation.navigate('Dashboard');
+    this.props.getUser({ name: this.state.userName, isSave: true });
   };
 
   render() {
+    const {
+      user: { status }
+    } = this.props;
     return (
       <>
         <View
@@ -59,10 +60,11 @@ export default class Login extends Component {
             text="Login"
             buttonStyle={styles.loginButton}
             onpress={this.onSubmit}
+            backgroundColor={true}
           />
         </View>
 
-        {false ? <OverlayIndicator /> : null}
+        {status == 'inprocess' ? <OverlayIndicator /> : null}
       </>
     );
   }
