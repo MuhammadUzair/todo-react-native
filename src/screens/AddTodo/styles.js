@@ -1,74 +1,46 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { os } from '../../utils';
-const { height, width } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
+import { scale, verticalScale } from 'react-native-size-matters';
+import { baseGrey } from '../../assets/styles';
 
 export default StyleSheet.create({
-  tabView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 10,
+  container: {
+    flex: 1,
+    flexDirection: 'column',
     backgroundColor: 'white'
   },
-  inputContainer: {
-    borderRadius: 50,
-    borderWidth: StyleSheet.hairlineWidth,
-    paddingVertical: os() ? 10 : 0,
-    paddingHorizontal: os() ? 10 : 0,
-    backgroundColor: 'white',
-    width: '100%',
-    flexDirection: 'row'
+  userInput: {
+    marginVertical: verticalScale(20),
+    marginHorizontal: scale(20),
+    height: verticalScale(100),
+    borderWidth: 0.2,
+    paddingLeft: scale(5),
+    borderColor: baseGrey,
+    borderWidth: 1,
+    textAlignVertical: 'top'
   },
-  headerText: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 2.5
+  datePickerWrap: {
+    marginVertical: verticalScale(20),
+    marginTop: 0,
+    marginHorizontal: scale(20),
+    height: verticalScale(40),
+    borderWidth: 0.2,
+    paddingLeft: scale(5),
+    borderColor: baseGrey,
+    borderWidth: 1,
+    textAlignVertical: 'top'
   },
-  withdrawLinkText: {
-    fontSize: 16,
-    textAlign: 'center'
+  datePickerText: {
+    paddingTop: verticalScale(10),
+    textAlignVertical: 'center'
   },
-  withdrawContent: {
-    // alignItems: 'center',
-    paddingVertical: 10,
-    backgroundColor: 'white'
+  tagsWrap: {
+    paddingHorizontal: scale(20),
+    paddingVertical: verticalScale(20)
   },
-  saveButtonWrap: {
-    // marginLeft: width * 0.04,
-    marginTop: 20,
-    width: '100%'
+  circleStyle: {
+    marginRight: scale(23)
   },
-  bigPrimaryButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 30,
-    borderRadius: 50,
-    flexDirection: 'row',
-    alignSelf: 'center',
-    // width: width * 0.85
-    width: '100%'
-  },
-  bigPrimaryButtonText: {
-    fontSize: 18,
-    fontWeight: 'bold'
-  },
-  contentheading: {
-    fontSize: 24,
-    marginBottom: 10
-  },
-  currencySign: {
-    position: 'absolute',
-    top: os() ? 10 : 17,
-    right: width * 0.04
-  },
-  mainContainer: {
-    height: height,
-    backgroundColor: 'white'
-  },
-  amountTextInput: {
-    width: '90%'
-  },
-  errorText: {
-    paddingTop: os() ? 10 : 0,
-    paddingHorizontal: os() ? 10 : 0
+  addButtonStyle: {
+    marginHorizontal: scale(20)
   }
 });

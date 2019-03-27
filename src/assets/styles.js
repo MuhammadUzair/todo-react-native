@@ -12,11 +12,15 @@ export const baseBlue = '#4879d5';
 export const baseGrey = '#E7E7E7';
 export const darkGrey = '#7B919E';
 
-export const globalStyles = StyleSheet.create({
-  mainContainer: {
-    paddingHorizontal: os() ? 10 : 15
-  },
+//circle color
+export const blueCircle = '#4990E2';
+export const greenCircle = '#DFF5C7';
+export const redCircle = '#FEFCFC';
+export const purpleCircle = '#EEC3F8';
+export const yellowCircle = '#FDF2E2';
+//circle color
 
+export const globalStyles = StyleSheet.create({
   flexContainer: {
     flex: 1
   },
@@ -48,38 +52,13 @@ export const globalStyles = StyleSheet.create({
   flexSpaceBetween: {
     justifyContent: 'space-between'
   },
-
-  fullScreen: {
-    width: 100 + '%',
-    height: 100 + '%'
-  },
-
-  fullWidth: {
-    width: 100 + '%'
-  },
-
-  fullHeight: {
-    height: 100 + '%'
-  },
-
-  fontFace: {
-    fontWeight: '300',
-    fontStyle: 'normal'
-  },
-
-  headingFontFace: {
-    fontWeight: 'bold',
-    fontStyle: 'normal',
-    marginBottom: 5
-  },
-
   boldFontFace: {
     fontWeight: 'bold',
     fontStyle: 'normal'
   },
 
   baseFontSize: {
-    fontSize: scale(12)
+    fontSize: scale(14)
   },
 
   subTextFontSize: {
