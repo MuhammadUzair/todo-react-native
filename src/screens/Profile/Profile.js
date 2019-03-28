@@ -7,6 +7,7 @@ import FlatButton from '../../components/FlatButton';
 export default class Profile extends Component {
   onSubmit = () => {
     this.props.resetUser();
+    this.props.resetTodo();
     this.props.navigation.dangerouslyGetParent().navigate('Login');
   };
 

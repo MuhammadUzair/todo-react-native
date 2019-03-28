@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, Keyboard } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import Header from '../../components/Header';
 import FlatButton from '../../components/FlatButton';
@@ -121,11 +121,12 @@ export default class AddTodo extends Component {
 
         <TouchableOpacity
           style={styles.datePickerWrap}
-          onPress={() =>
+          onPress={() => {
+            Keyboard.dismiss();
             this.setState({
               isdatePickerVisible: !this.state.isdatePickerVisible
-            })
-          }
+            });
+          }}
         >
           <Text style={styles.datePickerText}>
             {date ? date.substr(0, 24) : 'When is it due ?'}

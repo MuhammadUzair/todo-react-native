@@ -65,7 +65,7 @@ export default class Login extends Component {
           ]}
         >
           <Icon name="shield-check" style={styles.shieldIcon} />
-          <Text style={styles.heading}>Tod</Text>
+          <Text style={styles.heading}>Todo</Text>
           <Text style={styles.heading}>0</Text>
         </View>
         {this.renderFooter()}
