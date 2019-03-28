@@ -3,10 +3,10 @@
 react-native:0.59.2
 
 #Major libraries used
-Redux
-react-navigation
-react-native-swipeout
-react-native-paper
+Redux  
+react-navigation  
+react-native-swipeout  
+react-native-paper  
 react-native-size-matters
 
 ## Install dependencies
