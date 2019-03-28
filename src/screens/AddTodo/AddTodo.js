@@ -7,7 +7,7 @@ import UserInput from '../../components/UserInput';
 import Circle from '../../components/Circle';
 import { globalStyles } from '../../assets/styles';
 import styles from './styles';
-import UUID from 'uuid/v1';
+import { generateUniqueID } from '../../utils';
 
 export default class AddTodo extends Component {
   state = {
@@ -75,7 +75,7 @@ export default class AddTodo extends Component {
       createdDate: new Date().toString(),
       dueDate: date,
       isCompeleted: false,
-      id: UUID().substr(0, 8) //unique id timestamp based
+      id: generateUniqueID()
     });
     this.props.todoAction({ todo, isSave: true });
     this.renderAlert();

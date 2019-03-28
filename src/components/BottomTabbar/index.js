@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../../assets/styles';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class BottomTabbar extends Component {
   changeRoute = name => {
-    const { navigate, popToTop } = this.props.navigation;
+    const { navigate } = this.props.navigation;
     navigate(name);
   };
 

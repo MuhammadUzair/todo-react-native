@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native';
 import { globalStyles } from '../../assets/styles';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default props => {
-  const { text, buttonStyle, onpress } = props;
+  const { text, buttonStyle } = props;
 
   return (
     <LinearGradient

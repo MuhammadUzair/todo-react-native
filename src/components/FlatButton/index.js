@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { globalStyles, baseRed } from '../../assets/styles';
 import styles from './styles';

@@ -1,8 +1,4 @@
-import {
-  createSwitchNavigator,
-  createStackNavigator,
-  createAppContainer
-} from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import LoginScreen from '../screens/Login/';
 import BottomRouter from './bottom-router';

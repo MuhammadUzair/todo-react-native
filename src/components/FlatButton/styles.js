@@ -1,6 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { os } from '../../utils';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { StyleSheet } from 'react-native';
+import { scale, verticalScale } from 'react-native-size-matters';
 import { baseRed } from '../../assets/styles';
 export default StyleSheet.create({
   linearGradient: {

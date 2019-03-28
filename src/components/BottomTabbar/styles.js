@@ -1,7 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { os } from '../../utils';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { darkGrey } from '../../assets/styles';
+import { StyleSheet } from 'react-native';
+import { verticalScale } from 'react-native-size-matters';
 export default StyleSheet.create({
   container: {
     height: verticalScale(50),

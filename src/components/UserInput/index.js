@@ -1,8 +1,6 @@
 import React from 'react';
 import { TextInput } from 'react-native';
-import { globalStyles, baseBlue } from '../../assets/styles';
 import styles from './styles';
-import { Button } from 'react-native-paper';
 
 export default props => {
   const { value, onChangeText, placeholder, inputStyle, multiline } = props;

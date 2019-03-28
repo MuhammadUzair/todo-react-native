@@ -2,7 +2,7 @@
 
 react-native:0.59.2
 
-#Major libraries useds
+#Major libraries used
 Redux
 react-navigation
 react-native-swipeout

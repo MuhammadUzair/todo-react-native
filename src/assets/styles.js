@@ -1,9 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
-import { os } from '../utils';
-
-const screen = Dimensions.get('window');
 
 export const greyColor = '#2c2c2c';
 export const baseGreen = '#4CDA64';

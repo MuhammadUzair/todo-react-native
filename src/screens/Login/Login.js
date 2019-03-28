@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 import OverlayIndicator from '../../components/OverlayIndicator';
 import FlatButton from '../../components/FlatButton';

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, FlatList, Alert } from 'react-native';
+import { View, Text, FlatList, Alert } from 'react-native';
 import Swipeout from 'react-native-swipeout';
-import moment from 'moment';
 import Header from '../../components/Header';
 import Circle from '../../components/Circle';
-import styles from './styles';
-
 import OverlayIndicator from '../../components/OverlayIndicator';
-import { globalStyles } from '../../assets/styles';
+import { globalStyles, baseGreen } from '../../assets/styles';
+import { renderFormatedDate } from '../../utils';
+import styles from './styles';
 
 export default class Dashboard extends Component {
   state = {
@@ -67,13 +66,6 @@ export default class Dashboard extends Component {
     );
   };
 
-  renderDate = dueDate => {
-    let getFormatedDate = moment(new Date(dueDate)).fromNow();
-    if (getFormatedDate == 'a day ago') getFormatedDate = 'tomorrow';
-    if (getFormatedDate == 'in a day') getFormatedDate = 'yesterday';
-    return 'Due ' + getFormatedDate;
-  };
-
   renderTodo(item, index) {
     const swipeoutSettings = {
       autoClose: true,
@@ -86,7 +78,7 @@ export default class Dashboard extends Component {
       left: [
         {
           text: item.isCompeleted ? 'Compelete' : 'Incomplete',
-          Type: 'primary'
+          backgroundColor: baseGreen
         }
       ],
       rowId: index,
@@ -112,7 +104,7 @@ export default class Dashboard extends Component {
               {item.todoDetail ? item.todoDetail : '-'}
             </Text>
             <Text style={item.isCompeleted && styles.compeltedDateTextStyle}>
-              {item.dueDate ? this.renderDate(item.dueDate) : '-'}
+              {item.dueDate ? renderFormatedDate(item.dueDate) : '-'}
             </Text>
           </View>
         </View>
@@ -121,6 +113,11 @@ export default class Dashboard extends Component {
   }
 
   render() {
+    const {
+      getTodo: {
+        todo: { status }
+      }
+    } = this.props;
     return (
       <>
         <View style={styles.container}>
@@ -142,7 +139,7 @@ export default class Dashboard extends Component {
           />
         </View>
 
-        {false ? <OverlayIndicator /> : null}
+        {status == 'inprocess' ? <OverlayIndicator /> : null}
       </>
     );
   }

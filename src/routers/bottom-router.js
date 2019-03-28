@@ -24,4 +24,5 @@ const BottomTabNavigator = createBottomTabNavigator(
     }
   }
 );
+
 export default BottomTabNavigator;
