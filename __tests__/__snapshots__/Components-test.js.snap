@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Circle 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View
+    opacity={0.2}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderColor": "rgba(0,0,0,0.2)",
+          "borderWidth": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "borderRadius": 25,
+          "height": 50,
+          "width": 50,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders correctly FlatButton 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderColor": "#d63031",
+      "borderRadius": 4,
+      "borderStyle": "solid",
+      "borderWidth": 1,
+      "elevation": 0,
+      "minWidth": 64,
+      "shadowColor": "#000000",
+      "shadowOffset": Object {
+        "height": 0,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 0,
+    }
+  }
+>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "borderRadius": 4,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "Helvetica Neue",
+              "textAlign": "left",
+              "writingDirection": "ltr",
+            },
+            Array [
+              Object {
+                "letterSpacing": 1,
+                "marginHorizontal": 16,
+                "marginVertical": 9,
+                "textAlign": "center",
+              },
+              undefined,
+              Object {
+                "color": "#d63031",
+                "fontFamily": "HelveticaNeue-Medium",
+              },
+              Object {
+                "fontFamily": "HelveticaNeue-Medium",
+              },
+            ],
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders correctly Header 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4285784454,
+      4283226724,
+      4285784454,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Array [
+      Object {
+        "paddingBottom": 19.61764705882353,
+        "paddingHorizontal": 21.428571428571427,
+        "paddingTop": 78.47058823529412,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontStyle": "normal",
+          "fontWeight": "bold",
+        },
+        Object {
+          "color": "white",
+          "fontSize": 64.28571428571428,
+        },
+      ]
+    }
+  >
+     
+  </Text>
+</BVLinearGradient>
+`;
+
+exports[`renders correctly OverlayIndicator 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      Object {
+        "alignItems": "center",
+      },
+      Object {
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+        Object {
+          "justifyContent": "center",
+        },
+        Object {
+          "backgroundColor": "rgb(230,230,230)",
+          "borderRadius": 50,
+          "flex": 0,
+          "padding": 5,
+          "paddingLeft": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#4CDA64"
+      hidesWhenStopped={true}
+      size="large"
+    />
+  </View>
+</View>
+`;
+
+exports[`renders correctly UserInput 1`] = `
+<TextInput
+  allowFontScaling={true}
+  autoCorrect={false}
+  multiline={false}
+  onChangeText={[Function]}
+  rejectResponderTermination={true}
+  style={
+    Array [
+      Object {
+        "borderColor": "gray",
+        "borderWidth": 1,
+        "height": 40,
+      },
+      undefined,
+    ]
+  }
+  underlineColorAndroid="transparent"
+/>
+`;
