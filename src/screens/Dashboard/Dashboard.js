@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Alert } from 'react-native';
 import Swipeout from 'react-native-swipeout';
+import moment from 'moment';
 import Header from '../../components/Header';
+import Circle from '../../components/Circle';
 import styles from './styles';
 
 import OverlayIndicator from '../../components/OverlayIndicator';
@@ -14,7 +16,6 @@ export default class Dashboard extends Component {
 
   componentDidMount() {
     this.props.todoAction();
-    // this.props.resetTodo();
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
@@ -60,10 +61,17 @@ export default class Dashboard extends Component {
 
   emptyList = () => {
     return (
-      <View style={globalStyles.mainContainer}>
+      <View style={styles.todoRow}>
         <Text>No todo found</Text>
       </View>
     );
+  };
+
+  renderDate = dueDate => {
+    let getFormatedDate = moment(new Date(dueDate)).fromNow();
+    if (getFormatedDate == 'a day ago') getFormatedDate = 'tomorrow';
+    if (getFormatedDate == 'in a day') getFormatedDate = 'yesterday';
+    return 'Due ' + getFormatedDate;
   };
 
   renderTodo(item, index) {
@@ -74,40 +82,45 @@ export default class Dashboard extends Component {
         if (direction == 'left') this.markTodoCompelte(index);
         if (direction == 'right') this.deleteTodo(index);
       },
-      onClose: () => console.log('onClose call'),
-
-      right: [
-        {
-          onPress: () => console.log('right onPress call'),
-          text: 'Delete',
-          Type: 'Delete'
-        }
-      ],
+      right: [],
       left: [
         {
-          onPress: () => console.log('left onPress call'),
-          text: item.isCompeleted ? 'Compeleted' : 'Not Compeleted',
+          text: item.isCompeleted ? 'Compelete' : 'Incomplete',
           Type: 'primary'
         }
       ],
       rowId: index,
-      sectionID: index
+      sectionID: 1
     };
     return (
       <Swipeout {...swipeoutSettings}>
-        <View>
-          <Text
-            style={item.isCompeleted && { textDecorationLine: 'line-through' }}
-          >
-            {item.todoDetail}
-          </Text>
+        <View style={[styles.todoRow, globalStyles.flexHorizontal]}>
+          <Circle
+            color={item.selectedTag}
+            circleStyle={styles.circleStyle}
+            isActive={true}
+            smallCircle={true}
+          />
+          <View style={styles.todoTextWrap}>
+            <Text
+              style={[
+                globalStyles.boldFontFace,
+                globalStyles.baseFontSize,
+                item.isCompeleted && styles.compeltedTodoTextStyle
+              ]}
+            >
+              {item.todoDetail ? item.todoDetail : '-'}
+            </Text>
+            <Text style={item.isCompeleted && styles.compeltedDateTextStyle}>
+              {item.dueDate ? this.renderDate(item.dueDate) : '-'}
+            </Text>
+          </View>
         </View>
       </Swipeout>
     );
   }
 
   render() {
-    console.log('todo ', this.state.todo);
     return (
       <>
         <View style={styles.container}>

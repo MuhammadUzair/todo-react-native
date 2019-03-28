@@ -18,7 +18,6 @@ export default class Profile extends Component {
     return (
       <View style={styles.container}>
         <Header text={name ? 'Hello, ' + name : ''} />
-
         <FlatButton
           text="Logout"
           buttonStyle={styles.logoutButton}

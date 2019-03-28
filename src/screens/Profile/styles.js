@@ -5,7 +5,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: 'white'
   },
   logoutButton: {
     marginBottom: verticalScale(10),

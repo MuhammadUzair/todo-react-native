@@ -4084,6 +4084,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+moment@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+
 morgan@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
@@ -4810,10 +4814,6 @@ react-native-safe-area-view@^0.8.0:
 react-native-size-matters@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.1.6.tgz#2d49390ab861e7a9335d8d92b80d7f75349ff8a0"
-
-react-native-swipe-list-view@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/react-native-swipe-list-view/-/react-native-swipe-list-view-1.5.3.tgz#6e5f0795ccfb9bf12b76ccbdfb7146c0ae2bd95b"
 
 react-native-swipeout@^2.3.6:
   version "2.3.6"

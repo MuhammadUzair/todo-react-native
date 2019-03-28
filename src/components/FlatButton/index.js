@@ -28,6 +28,7 @@ export default props => {
       onPress={onpress && onpress}
       color={baseRed}
       style={[styles.buttonContentStyle, buttonStyle && buttonStyle]}
+      uppercase={false}
     >
       {text && text}
     </Button>

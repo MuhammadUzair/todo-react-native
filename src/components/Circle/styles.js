@@ -15,8 +15,8 @@ export default StyleSheet.create({
     borderRadius: 25
   },
   smallWidth: {
-    width: 26,
-    height: 26,
-    borderRadius: 13
+    width: 18,
+    height: 18,
+    borderRadius: 9
   }
 });

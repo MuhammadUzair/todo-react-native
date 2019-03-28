@@ -86,7 +86,7 @@ export const globalStyles = StyleSheet.create({
   // tab Icons
   tabIconStyle: {
     fontSize: scale(26),
-    color: darkGrey
+    paddingTop: verticalScale(10)
   }
   // tab Icons
 });

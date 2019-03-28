@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import OverlayIndicator from '../../components/OverlayIndicator';
 import FlatButton from '../../components/FlatButton';
@@ -32,6 +32,25 @@ export default class Login extends Component {
     this.props.getUser({ name: this.state.userName, isSave: true });
   };
 
+  renderFooter = () => {
+    return (
+      <View style={globalStyles.rowPadding}>
+        <UserInput
+          value={this.state.userName}
+          onChangeText={this.onUserNameChange}
+          placeholder="Name"
+          inputStyle={styles.userInput}
+        />
+        <FlatButton
+          text="Login"
+          buttonStyle={styles.loginButton}
+          onpress={() => this.onSubmit()}
+          backgroundColor={true}
+        />
+      </View>
+    );
+  };
+
   render() {
     const {
       user: { status }
@@ -49,21 +68,7 @@ export default class Login extends Component {
           <Text style={styles.heading}>Tod</Text>
           <Text style={styles.heading}>0</Text>
         </View>
-        <View style={globalStyles.rowPadding}>
-          <UserInput
-            value={this.state.userName}
-            onChangeText={this.onUserNameChange}
-            placeholder="Name"
-            inputStyle={styles.userInput}
-          />
-          <FlatButton
-            text="Login"
-            buttonStyle={styles.loginButton}
-            onpress={() => this.onSubmit()}
-            backgroundColor={true}
-          />
-        </View>
-
+        {this.renderFooter()}
         {status == 'inprocess' ? <OverlayIndicator /> : null}
       </>
     );

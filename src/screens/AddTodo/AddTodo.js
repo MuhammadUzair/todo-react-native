@@ -26,7 +26,6 @@ export default class AddTodo extends Component {
 
   componentDidMount() {
     this.props.todoAction();
-    console.log('uid ', UUID());
   }
 
   onTodoDetailChange = todoDetail => {
@@ -138,7 +137,7 @@ export default class AddTodo extends Component {
           isVisible={this.state.isdatePickerVisible}
           onConfirm={this.handledatePicked}
           onCancel={this.hidedatePicker}
-          maximumDate={new Date()}
+          is24Hour={true}
         />
 
         <View style={[globalStyles.flexHorizontal, styles.tagsWrap]}>
