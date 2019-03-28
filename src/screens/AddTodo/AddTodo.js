@@ -7,6 +7,7 @@ import UserInput from '../../components/UserInput';
 import Circle from '../../components/Circle';
 import { globalStyles } from '../../assets/styles';
 import styles from './styles';
+import UUID from 'uuid/v1';
 
 export default class AddTodo extends Component {
   state = {
@@ -25,6 +26,7 @@ export default class AddTodo extends Component {
 
   componentDidMount() {
     this.props.todoAction();
+    console.log('uid ', UUID());
   }
 
   onTodoDetailChange = todoDetail => {
@@ -40,6 +42,7 @@ export default class AddTodo extends Component {
 
   handledatePicked = pickerDate => {
     this.setState({ date: pickerDate.toString() });
+    this.hidedatePicker();
   };
 
   onTagPressed = selectedIndex => {
@@ -70,9 +73,22 @@ export default class AddTodo extends Component {
     todo.push({
       todoDetail,
       selectedTag,
-      createdDate: date
+      createdDate: new Date().toString(),
+      dueDate: date,
+      isCompeleted: false,
+      id: UUID().substr(0, 8) //unique id timestamp based
     });
     this.props.todoAction({ todo, isSave: true });
+    this.renderAlert();
+
+    this.setState({
+      todoDetail: '',
+      date: '',
+      selectedTag: 'blueCircle'
+    });
+  }
+
+  renderAlert = () => {
     Alert.alert(
       'Todo add successfully',
       '',
@@ -88,7 +104,8 @@ export default class AddTodo extends Component {
       ],
       { cancelable: false }
     );
-  }
+  };
+
   render() {
     const { date } = this.state;
     return (

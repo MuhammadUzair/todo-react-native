@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { todoAction } from '../../redux/epics/todo-epics';
+import { todoAction, resetTodo } from '../../redux/epics/todo-epics';
 import Dashboard from './Dashboard';
 
 const mapStateToProps = ({ getTodo }) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = ({ getTodo }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  todoAction: data => dispatch(todoAction(data))
+  todoAction: data => dispatch(todoAction(data)),
+  resetTodo: () => dispatch(resetTodo())
 });
 
 export default connect(
