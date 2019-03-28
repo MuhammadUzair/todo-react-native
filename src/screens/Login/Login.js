@@ -59,7 +59,7 @@ export default class Login extends Component {
           <FlatButton
             text="Login"
             buttonStyle={styles.loginButton}
-            onpress={this.onSubmit}
+            onpress={() => this.onSubmit()}
             backgroundColor={true}
           />
         </View>

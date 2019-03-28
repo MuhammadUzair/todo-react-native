@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable';
 
-// import getUser from './auth-epics';
-import getUser from './user-epics';
+import userEpic from './user-epics';
+import todoEpic from './todo-epics';
 
-export default combineEpics(getUser);
+export default combineEpics(userEpic, todoEpic);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import Header from '../../components/Header';
 import FlatButton from '../../components/FlatButton';
@@ -22,6 +22,10 @@ export default class AddTodo extends Component {
     ],
     selectedTag: 'blueCircle'
   };
+
+  componentDidMount() {
+    this.props.todoAction();
+  }
 
   onTodoDetailChange = todoDetail => {
     this.setState({ todoDetail });
@@ -60,15 +64,31 @@ export default class AddTodo extends Component {
     ));
   };
 
-  onSubmit = async () => {
+  onSubmit() {
     const { todoDetail, date, selectedTag } = this.state;
-    let todo = {
+    let todo = this.props.getTodo.todo;
+    todo.push({
       todoDetail,
       selectedTag,
       createdDate: date
-    };
-    console.log('submit ', todo);
-  };
+    });
+    this.props.todoAction({ todo, isSave: true });
+    Alert.alert(
+      'Todo add successfully',
+      '',
+      [
+        {
+          text: 'Go to Dashboad',
+          onPress: () => this.props.navigation.navigate('Dashboard')
+        },
+        {
+          text: 'OK',
+          onPress: () => {}
+        }
+      ],
+      { cancelable: false }
+    );
+  }
   render() {
     const { date } = this.state;
     return (
@@ -110,7 +130,7 @@ export default class AddTodo extends Component {
 
         <FlatButton
           text="Add"
-          onpress={this.onSubmit}
+          onpress={() => this.onSubmit()}
           backgroundColor={true}
           buttonStyle={styles.addButtonStyle}
         />
