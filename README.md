@@ -17,8 +17,8 @@ Run `npm install` or `yarn install` to install packages in project.
 ## Build
 
 Android  
-`react-native run-android`
-[Click here to Download Android Buid](https://i.diawi.com/Jp2HGz)
+`react-native run-android`  
+[Click here to Download Android Buid](https://i.diawi.com/Jp2HGz)  
 ios  
 `react-native run-ios`  
 [Click here to Download IOS Buid](https://i.diawi.com/wY8SQY)
